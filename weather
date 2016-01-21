@@ -2,7 +2,7 @@
 
 ######################################################################
 # Author: Aarsh Patil                                                #
-# Version: 0.2 alpha                                                 #
+# Version: 0.3 alpha                                                 #
 # Program: Displays current weather according to the city            #
 ######################################################################
 
@@ -15,8 +15,11 @@ degree_sign= u'\N{DEGREE SIGN}'
 #API key for the OWM
 owm = pyowm.OWM('2c7cb540acc670c661d2758545a0d56a')
 
+#pass the parameter from command line
+cityname = sys.argv[1]
+
 #pass the location parameter to the API
-currentWeather = owm.weather_at_place('London')
+currentWeather = owm.weather_at_place(cityname)
 placeWeather = currentWeather.get_weather()
 
 #get inputs from API
